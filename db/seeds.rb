@@ -9,19 +9,19 @@ restaurants = [
     {
         name: "renaldis",
         location: "lakeview",
-        restautant_type: "bar",
+        res_type: "bar",
         image: 'https://media.istockphoto.com/photos/modern-restaurant-interior-design-picture-id12111097191?k=20&m=12111097191&s=612x612&w=0&h=KiZX7NBZVCK9MlSh9BJ8hZNSJcTIMbNSSV2yusw2NmM='
     },
     {
         name: 'toco',
         location: 'wicker park',
-        restautant_type: 'casual',
+        res_type: 'casual',
         image: 'https://www.gordonramsayrestaurants.com/assets/Uploads/_resampled/CroppedFocusedImage16001090100-100-Casual-6.jpg'
     },
     {
         name: 'atlantic',
         location: 'Edgartown',
-        restautant_type: 'fine dining',
+        res_type: 'fine dining',
         image: 'https://i.ndtvimg.com/i/20110-10/restaurant_6210x7100_919998996109.jpg'
     }
 ]
