@@ -44,7 +44,8 @@ class RestaurantsController < ApplicationController
 
   def options
     {
-      except: [:created_at, :updated_at],
+    only: [:id, :name, :location, :res_type, :image],
+    methods: [:rating, :count_reviews],
         include: {
           reviews: {except: [:created_at, :updated_at]}
 
