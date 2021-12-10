@@ -17,6 +17,12 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    restaurant = Restaurant.new(restaurant_params)
+    if restaurant.save
+      render json: restaurant.as_json(options)
+    else
+      render json: {error: 'Something went wrong'}
+    end
   end
 
   def edit
@@ -31,7 +37,7 @@ class RestaurantsController < ApplicationController
   private 
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :location, :image, :res_type)
+    params.require(:restaurant).permit(:name, :location, :image, :res_type, :description)
   end
 
   def get_restaurant
