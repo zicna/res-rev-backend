@@ -77,6 +77,7 @@ restaurants.map do |res|
     Restaurant.find_or_create_by(name: res[:name]) do |r|
         r.name = res[:name]
         r.location = res[:location]
+        r.description = res[:description]
         r.res_type = res[:res_type]
         r.image = res[:image]
     puts("restaurant #{r[:name]} was created")
