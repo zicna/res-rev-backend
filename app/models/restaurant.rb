@@ -5,7 +5,7 @@ class Restaurant < ApplicationRecord
         self.reviews.average(:mark)
     end
 
-    def count_reviews
+    def review_count
         self.reviews.count
     end
 end
