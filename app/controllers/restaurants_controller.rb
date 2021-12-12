@@ -32,6 +32,10 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    # byebug
+    @restaurant.destroy
+    # render json: {id: `#{@restaurant.id}`, message: `#{@restaurant.name} has been deleted from database. Thank you!`}
+    render json: @restaurant.id
   end
 
   private 
