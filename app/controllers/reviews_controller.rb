@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+
+  before_action :get_review, only: [:show, :update, :destroy]
   def show
   end
 
@@ -21,6 +23,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    # byebug
+    @review.destroy
+    render json: @review.as_json(options)
   end
 private
 def review_params
@@ -31,6 +36,10 @@ def options
   {
     only: [:id, :content, :mark, :restaurant_id]
   }
+end
+
+def get_review
+  @review = Review.find_by(id: params[:id])
 end
 
 end
