@@ -26,7 +26,6 @@ restaurants = [
         location: 'Edgartown, MA',
         res_type: 'fine dining',
         image: 'https://s3.amazonaws.com/bucket2.rpmrestaurants.com/wp-content/uploads/RPM_Steak_Chicago_Private_Dining_Room.jpg',
-        description: ''
     },
     {
         name: 'RPM',
@@ -87,44 +86,102 @@ end
 reviews = [
     {
         restaurant_id: 1,
-        mark: 7,
-        content: "Good food, not very clean" 
+        mark: 2,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
+    },
+    {
+        restaurant_id: 1,
+        mark: 10,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
+    },
+    {
+        restaurant_id: 1,
+        mark: 3,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor.!" 
+    },
+    {
+        restaurant_id: 1,
+        mark: 5,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
     },
     {
         restaurant_id: 2,
+        mark: 10,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
+    },
+    {
+        restaurant_id: 7,
+        mark: 7,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor."
+    },
+    {
+        restaurant_id: 3,
+        mark: 7,
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
+    },
+    {
+        restaurant_id: 3,
         mark: 9,
         content: "Good food, service could be better" 
     },
     {
-        restaurant_id: 7,
+        restaurant_id: 3,
         mark: 10,
-        content: "Great food!" 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
     },
     {
-        restaurant_id: 1,
+        restaurant_id: 3,
         mark: 1,
-        content: "Terrible experience" 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
     },
     {
-        restaurant_id: 2,
+        restaurant_id: 3,
         mark: 10,
-        content: "Excellent overall" 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor." 
     },
     {
-        restaurant_id: 7,
+        restaurant_id: 3,
         mark: 7,
-        content: "so and so, for the money they should do better"
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec. Sed ultricies, diam et fermentum dictum, libero enim ullamcorper arcu, eget tempus ligula nisi ut tortor."
     }
     
 ]
-reviews.map do |review|
-    Review.find_or_create_by(restaurant_id: review[:restaurant_id], content: review[:content], mark: review[:mark]) do |r|
-        r.restaurant_id = review[:restaurant_id]
-        r.content = review[:content]
-        r.mark = review[:mark]
-        puts ("review for restorant  ")
-    end
+# reviews.map do |review|
+#     Review.find_or_create_by(restaurant_id: review[:restaurant_id], content: review[:content], mark: review[:mark]) do |r|
+#         r.restaurant_id = review[:restaurant_id]
+#         r.content = review[:content]
+#         r.mark = review[:mark]
+#         puts ("review for restorant  ")
+#     end
+# end
+# ! *********************************************************************************
+# ! RANDOM NUMBERS IN RUBY
+# rand()
+# * => random float number in range [0.0 - 1.0]
+
+# rand(5)
+# * rand(n), n is integer
+# * => random integer number in range [0, n)
+
+# rand(1..5)
+# * rand(x..y), x,y are integers
+# * => generate random number in range from x(included) to  y (not included)
+
+# rand(1...10)
+# * rand(x...y), x,y are integers
+# * => generate random integer number in range from x(included) to  y (included)
+# ! *********************************************************************************
+
+
+res_count = Restaurant.all.length
+review_count = 0
+
+(res_count * 6 ).times do
+    Review.create(
+        restaurant_id: rand_res_id = rand(1...res_count),
+        mark: rand(1...10),
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum aliquet tempor. Curabitur laoreet arcu et ex tempor gravida. Maecenas posuere at metus vitae lacinia. Donec vehicula luctus sem, quis volutpat justo pretium nec.'
+    )
 end
 
-#{Restaurant.find_by(id: review[:restaurant_id]).name}
 
