@@ -25,7 +25,11 @@ class ReviewsController < ApplicationController
   def destroy
     # byebug
     @review.destroy
+    #! option one 
     render json: @review.as_json(options)
+    #! option two 
+    # restaurant = Restaurant.find_by(id: @review.restaurant_id)
+    # render json: restaurant.as_json(restaurant_options)
   end
 private
 def review_params
@@ -41,5 +45,18 @@ end
 def get_review
   @review = Review.find_by(id: params[:id])
 end
+
+#! option two 
+
+# def restaurant_options
+#     {
+#     only: [:id, :name, :location, :res_type, :image, :description],
+#     methods: [:rating, :review_count],
+#         include: {
+#           reviews: {except: [:created_at, :updated_at]}
+
+#         }
+#     }
+# end
 
 end
