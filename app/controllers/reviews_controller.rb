@@ -10,7 +10,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      render json: @review.as_json(options)
+    #! option two 
+      restaurant = Restaurant.find_by(id: @review.restaurant_id)
+      render json: restaurant.as_json(restaurant_options)
+      # render json: @review.as_json(options)
     else
       render json: {error: 'Something went wrong'}
     end
@@ -23,13 +26,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    # byebug
     @review.destroy
-    #! option one 
-    render json: @review.as_json(options)
     #! option two 
-    # restaurant = Restaurant.find_by(id: @review.restaurant_id)
-    # render json: restaurant.as_json(restaurant_options)
+    restaurant = Restaurant.find_by(id: @review.restaurant_id)
+
+    render json: restaurant.as_json(restaurant_options)
   end
 private
 def review_params
@@ -48,15 +49,15 @@ end
 
 #! option two 
 
-# def restaurant_options
-#     {
-#     only: [:id, :name, :location, :res_type, :image, :description],
-#     methods: [:rating, :review_count],
-#         include: {
-#           reviews: {except: [:created_at, :updated_at]}
+def restaurant_options
+    {
+    only: [:id, :name, :location, :res_type, :image, :description],
+    methods: [:rating, :review_count],
+        include: {
+          reviews: {except: [:created_at, :updated_at]}
 
-#         }
-#     }
-# end
+        }
+    }
+end
 
 end
