@@ -23,6 +23,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review.update(content: params[:content], mark: params[:mark])
+    restaurant = Restaurant.find_by(id: @review.restaurant_id)
+    render json: restaurant.as_json(restaurant_options)
   end
 
   def destroy
