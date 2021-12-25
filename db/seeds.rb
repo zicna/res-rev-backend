@@ -178,4 +178,7 @@ review_count = 0
     )
 end
 
+puts "✅ Done seeding"
+
+
 
